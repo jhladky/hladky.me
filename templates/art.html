@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block title %}art{% endblock %}
+
+{% block style %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="/static/css/art.css"/>    
+{% endblock %}
+
 {% block content %}
 <div id="art" class="page overY">
   I like to draw. I'm not very good at it, but that hasn't stopped me yet. I also like photography, especially anything night or time-lapse.
@@ -20,4 +26,3 @@
   </div>
 </div>
 {% endblock %}
-

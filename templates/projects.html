@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block title %}projects{% endblock %}
+
+{% block style %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="/static/css/art.css"/>    
+{% endblock %}
+
 {% block content %}
 <div id="projects" class="page overY">
   <h2>These projects are either something I've cooked up on my own, or a class project ran with</h2>

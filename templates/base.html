@@ -2,16 +2,9 @@
 <html>
   <head>
     <title>{% block title %}{% endblock %} - hyperboleon</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/hyperboleon.css"/>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <!--<script src="/static/hyperboleon.js"></script>-->
-    <script>
-      $(function() {
-         $("#" + $(location).attr("href").split('/')[3] + "Nav")
-             .parent()
-             .addClass("navSelected");
-      });
-    </script>
+    {% block style %}
+    <link rel="stylesheet" type="text/css" href="/static/css/hyperboleon.css"/>    
+    {% endblock %}
   </head>
   <body>
     <div class="flexContainer fullHeight overX">
@@ -45,5 +38,16 @@
       </div>
       <div class="flexExpand"></div>
     </div>
+    {% block script %}
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <!--<script src="/static/js/base.js"></script>-->
+    <script>
+      $(function() {
+      $("#" + $(location).attr("href").split('/')[3] + "Nav")
+             .parent()
+             .addClass("navSelected");
+      });
+    </script>
+    {% endblock %}
   </body>
 </html>

@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 {% block title %}else{% endblock %}
+
+{% block style %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="/static/css/else.css"/>    
+{% endblock %}
+
 {% block content %}
 <div id="else" class="page overY">
   Important Classes I've taken/am taking:
@@ -53,6 +59,5 @@
     </div>
   </div>
   <hr>
-  What year is it? <input type="text" id="whatYear"></input>
 </div>
 {% endblock %}

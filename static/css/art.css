@@ -1,0 +1,6 @@
+.artItem {
+    width: 80px;   
+    height: 80px;
+    border: solid 2px black;
+    margin: 10px;
+}
