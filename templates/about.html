@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block title %}about{% endblock %}
 
+{% block style %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="/static/css/about.css"/>    
+{% endblock %}
+
 {% block content %}
 <div id="about" class="page overY">
   <img src="/static/img/me.jpg"/><br>
