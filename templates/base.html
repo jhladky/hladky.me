@@ -3,21 +3,21 @@
   <head>
     <title>{% block title %}{% endblock %} - hyperboleon</title>
     {% block style %}
-    <link rel="stylesheet" type="text/css" href="/static/css/hyperboleon.css"/>    
+    <link rel="stylesheet" type="text/css" href="/static/css/hyperboleon.css"/>
     {% endblock %}
   </head>
   <body>
     <div class="flexContainer fullHeight overX">
       <div class="flexExpand"></div>
       <div id="stack" class="flexContainer vertical overX">
-        <div id="header" class="flexContainer flexFixed spaceBetween border" title="One unit of hyperbole">
+        <div id="header" class="flexContainer flexFixed spaceBetween border">
           <div id="titleText" class="fullHeight"> <!--MAYBE TAKE BORDER OUT!!!!!-->
-            <div id="theTitle">HYPERBOLEON</div>
+            <div id="theTitle" title="One unit of hyperbole">HYPERBOLEON</div>
             <div id="subText">The poorly-named personal website of Jacob Hladky</div>
           </div>
           <div id="contact" class="fullHeight">
             <a href="mailto:jacob.hladky@gmail.com" class="contactElement notLink">email</a>
-            <a href="http://facebook.com/jacob.hladky" class="contactElement notLink">facebook</a>
+            <a href="#" id="socialLnk" class="contactElement notLink">social</a>
             <a href="/static/resume.pdf" class="contactElement notLink">résumé</a>
           </div>
         </div>
