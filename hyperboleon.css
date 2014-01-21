@@ -1,0 +1,195 @@
+@import url(http://fonts.googleapis.com/css?family=Buenard);
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Buenard', serif;
+}
+
+header, footer, #contactList, #sectionList, section .title {
+    font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+header {    
+    position: fixed;
+    min-height: 200px;
+    background-size: cover;
+    background-position: 0px -200px;
+    
+    color: white;
+    font-weight: bold;
+    left: 50%;
+    margin-left: -450px;
+    display: block;
+    font-size: 16pt;
+    z-index: 1000;
+}
+
+header > div:first-of-type {
+    background-image: url('header-back.jpg');
+    background-size: cover;
+    position: relative;
+    background-position: 0px -200px;
+    min-height: 175px;
+    width: 100%;
+}
+
+header > div:last-of-type {
+    height: 25px;
+    background-color: grey;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+header #title {
+    font-size: 80pt;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    line-height: .65;
+}
+
+header #contact {
+    position: absolute;
+    right: 10px;
+    line-height: 25px;
+    
+}
+
+#contactList {
+    position: fixed; 
+    top: 200; 
+    right: 0;
+    background-color: grey;
+    color: white;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
+    width: 100px;
+    list-style-type: none;
+    margin: 0;
+    direction: rtl;
+    padding: 5px 10px 10px 10px;
+}
+
+#sectionList {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+#sectionList.normal {
+    position: fixed;
+    left: 0;
+    top: 200px;
+    width: 120px;
+}
+
+#sectionList.mobile {
+    min-height: 120px;
+    margin-bottom: 20px;
+}
+
+.section {
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    display: inline-block;
+    box-shadow: 2px 2px 2px 2px #dbdbdb;
+}
+
+a.notLink {
+    text-decoration: none;
+    color: white;
+}
+
+code {
+    font-size: 10pt;
+    margin: 5px;
+    display: block;
+    text-align: center;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    background-color: grey;
+    width: 100%;
+    height: 50px;
+}
+
+section {
+    background-color: white;
+    font-size: 14pt;
+    position: relative;
+    padding-top: 215px;
+    padding-bottom: 65px;
+}
+
+section #content {
+    margin: 0 30px;
+}
+
+section .title {
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+.title span {
+    margin-left: 20px;
+
+}
+
+.hCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vFull {
+    height: 100%;
+}
+
+.hFull {
+    width: 100%;
+}
+
+.backWidth {
+    max-width: 900px;
+}
+
+.hidden {
+    display: none;
+}
+
+#shadow {
+    width: 900px;
+    position: fixed;
+    height: 110%;
+    top: -5%;
+    overflow-y: hidden;
+    pointer-events: none;
+    box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
+    -webkit-box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
+    -moz-box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
+}
+
+#aboutTitle {
+    padding-top: 20px;
+    background-image: url("me.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 380px;
+    margin-top: -20px;
+    color: white;
+}
