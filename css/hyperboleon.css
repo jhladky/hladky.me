@@ -59,8 +59,8 @@ header #contact {
 
 #contactList {
     position: fixed; 
-    top: 200; 
-    right: 0;
+    top: 200px;
+    right: 0px;
     background-color: grey;
     color: white;
     font-family: 'Carrois Gothic SC', sans-serif;
