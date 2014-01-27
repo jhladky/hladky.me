@@ -75,6 +75,7 @@ hyperboleon.setup = function () {
             self.activeTitle.addClass("hidden");
             $section.removeClass("hidden");
             $sectionTitle.removeClass("hidden");
+            $section.load($this.attr("section") + ".html");
             self.active = $section;
             self.activeTitle = $sectionTitle;
         });
