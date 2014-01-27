@@ -4,6 +4,7 @@ var hyperboleon = {
     $title: $("#title"),
     $titles: $("#titles"), //rename me
     $contents: $("#content"), //rename me
+    $contact: $("#contact"),
     $contactList: $("#contactList"),
     $sectionList: $("#sectionList"),
 
