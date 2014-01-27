@@ -22,41 +22,27 @@
           contact</a>
       </div>
     </header>
+    
     <section class="hCenter backWidth">
       <ul id="contactList" class="hidden">
         <li><a class="notLink" href="mailto:jacob.hladky@gmail.com">email</a></li>
         <li><a class="notLink" href="http://github.com/jhladky">github</a></li>
         <li><a class="notLink" href="resume.pdf">r&eacute;sum&eacute;</a></li>
       </ul>
-      <div id="sectionList" class="normal">
-        <a href="#" class="section notLink" section="about" style="background-image: url('img/about.jpg');">about</a>
-        <a href="#" class="section notLink" section="projects" style="background-image: url('img/projects.png');">projects</a>
-        <a href="#" class="section notLink" section="art" style="background-image: url('img/art.jpg');">art</a>
-        <a href="#" class="section notLink" section="else" style="background-image: url('img/else.jpg');">else</a>
-      </div>
-      <div class="title" id="titles">
-        <div class="hidden" id="aboutTitle" style="background-image:url('img/me.jpg')">ABOUT</div>
-        <div class="hidden" id="projectsTitle">PROJECTS</div>
-        <div class="hidden" id="artTitle">ART</div>
-        <div class="hidden" id="elseTitle">ELSE</div>
-      </div>
-      <div id="content">
-        <div class="hidden" id="about"></div>
-        <div class="hidden" id="projects"></div>
-        <div class="hidden" id="art"></div>
-        <div class="hidden" id="else"></div>
-      </div>
+      <div id="sectionList" class="normal"></div>
+      <div class="title" id="titles"></div>
+      <div id="content"></div>
+      
       <footer class="backWidth">
         <div class="hFull" style="margin: 15px; text-align: center;">&copy; jacob hladky 2014</div>
       </footer>
+      
     </section>
     
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="js/hyperboleon.js"></script>
     <script>
-      $(function ()  {
-         hyperboleon.setup();
-      });
+      $(function ()  { hyperboleon.setup(); });
     </script>
   </body>
 </html>

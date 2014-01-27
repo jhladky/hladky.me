@@ -2,28 +2,41 @@ var hyperboleon = {
     $header: $("header"),
     $footer: $("footer"),
     $title: $("#title"),
+    $titles: $("#titles"), //rename me
+    $contents: $("#content"), //rename me
     $subtitle: $("#subtitle"),
     $contact: $("#contact"),
     $contactList: $("#contactList"),
     $sectionList: $("#sectionList"),
-    $sectionCtrls: $("#sectionList").children(),
-    sectionTitles: {
-        "about": $("#aboutTitle"),
-        "projects": $("#projectsTitle"),
-        "art": $("#artTitle"),
-        "else": $("#elseTitle")
-    },
-    sections: {
-        "about": $("#about"),
-        "projects": $("#projects"),
-        "art": $("#art"),
-        "else": $("#else")
-    }
+    
+    sections: ["about", "projects", "art", "else"],
+    sectionCtrls: {},
+    sectionTitles: {},
+    sectionContents: {}
 };
 
 hyperboleon.setup = function () {
     var self = this;
 
+    this.sections.forEach(function(section) {
+        self.sectionCtrls[section] = $("<a href='#' class='section notLink'>")
+            .css("background-image", "url('img/" + section + ".jpg')")
+            .text(section);
+        self.sectionTitles[section] = $("<div>").text(section.toUpperCase());
+        self.sectionContents[section] = $("<div>");
+    });
+    
+    this.sectionTitles.about
+        .attr("id", "aboutTitle")
+        .css("background-image", "url('img/me.jpg')");
+
+    this.sectionCtrls.projects
+        .css("background-image", "url('img/projects.png')");
+
+    $.each(this.sectionCtrls, function () {
+        self.$sectionList.append(this);
+    });
+    
     $(window).resize(function () {
         var width = $(this).width();
 
@@ -33,7 +46,9 @@ hyperboleon.setup = function () {
             } else {
                 self.$subtitle.removeClass("hidden");
             }
-            self.$header.add(self.$footer).css("margin-left", "-" + width / 2 + "px");
+            self.$header
+                .add(self.$footer)
+                .css("margin-left", "-" + width / 2 + "px");
             self.$title.css("font-size", width / 11.25 + "pt");
             self.$contactList.css("right", "0px");
             self.$sectionList.addClass("mobile").removeClass("normal");
@@ -42,7 +57,8 @@ hyperboleon.setup = function () {
                 self.$sectionList.addClass("mobile").removeClass("normal");
             } else {
                 self.$sectionList.addClass("normal").removeClass("mobile");
-                self.$sectionList.css("left", (width - 900) / 2 - self.$sectionList.width());
+                self.$sectionList
+                    .css("left", (width - 900) / 2 - self.$sectionList.width());
             }
             self.$header.add(self.$footer).css("margin-left", "-450px");
             self.$title.css("font-size", "80pt");
@@ -50,41 +66,38 @@ hyperboleon.setup = function () {
         }
         $("#shadow").css("left", (width - $("#shadow").width()) / 2);
     });
-    
+
     $("body")[0].addEventListener ("overflowchanged", function() {
         var width = $(window).width();
-        
+
         $("#shadow").css("left", (width - $("#shadow").width()) / 2);
         self.$contactList.css("right", (width - 900) / 2);
         self.$sectionList.css("left", (width - 900) / 2 - self.$sectionList.width());
     }, false);
     
-        
     this.$contact.click(function () {
-        $(this).children().filter("i").toggleClass("hidden");
+        $(this).children().toggleClass("hidden");
         self.$contactList.slideToggle();
     });
 
-    this.$sectionCtrls.each(function () {
-        var $this = $(this);
-        $this.click(function () {
-            var $section = self.sections[$this.attr("section")];
-            var $sectionTitle = self.sectionTitles[$this.attr("section")];
-            
-            self.active.addClass("hidden");
-            self.activeTitle.addClass("hidden");
-            $section.removeClass("hidden");
-            $sectionTitle.removeClass("hidden");
-            $section.load($this.attr("section") + ".html");
-            self.active = $section;
-            self.activeTitle = $sectionTitle;
+    $.each(this.sectionCtrls, function(name, section) {
+        $(this).click(function () {
+            self.activeContent.detach();
+            self.activeTitle.detach();
+            self.activeContent = self.sectionContents[name];
+            self.activeTitle = self.sectionTitles[name];
+            if(!self.activeContent.loaded) {
+                self.activeContent.load(name + ".html");
+                self.activeContent.loaded = true;
+            }
+            self.$titles.append(self.activeTitle);
+            self.$contents.append(self.activeContent);
         });
-    });
+    }); 
     
-    this.active = this.sections.about;
+    this.activeContent = this.sectionContents.about;
     this.activeTitle = this.sectionTitles.about;
-    this.$sectionCtrls
-        .filter(function () { return $(this).attr("section") == "about" })
-        .click();
+    this.sectionCtrls["about"].click();
+        
     $(window).resize();
 };
