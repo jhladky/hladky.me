@@ -42,19 +42,19 @@ section {
     font-size: 13pt;
     position: relative;
     min-height: 100%;
+    overflow-x: hidden;
 }
 
 footer {
     position: absolute;
     bottom: 0;
-    left: 50%;
+    left: 0; 
     background-color: grey;
     width: 100%;
     height: 50px;
 }
 
 header > div:first-of-type {
-    background-image: url('img/header-back.jpg');
     background-size: cover;
     position: relative;
     background-position: 0px -200px;
@@ -193,7 +193,6 @@ section .title > div {
 
 #aboutTitle {
     padding-top: 20px;
-    background-image: url("img/me.jpg");
     background-size: cover;
     width: 100%;
     height: 380px;
