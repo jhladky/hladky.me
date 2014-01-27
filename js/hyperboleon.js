@@ -60,7 +60,7 @@ hyperboleon.setup = function () {
     }, false);
     
         
-    this.$contact.mouseover(function () {
+    this.$contact.click(function () {
         $(this).children().filter("i").toggleClass("hidden");
         self.$contactList.slideToggle();
     });
@@ -75,12 +75,6 @@ hyperboleon.setup = function () {
             self.activeTitle.addClass("hidden");
             $section.removeClass("hidden");
             $sectionTitle.removeClass("hidden");
-            $section.load($this.attr("section") + ".html");
-            if($section.outerHeight() < $(window).height() - 215 - 65) {
-                $("section").css("height", ($(window).height() - 215 - 65) + "px");
-            } else {
-                $("section").css("height", "100%");
-            }
             self.active = $section;
             self.activeTitle = $sectionTitle;
         });
