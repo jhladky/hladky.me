@@ -194,6 +194,7 @@ section .title > div {
 #aboutTitle {
     padding-top: 20px;
     background-size: cover;
+    background-position: 0px -150px;
     width: 100%;
     height: 380px;
     margin-top: -20px;
