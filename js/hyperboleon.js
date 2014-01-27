@@ -75,11 +75,6 @@ hyperboleon.setup = function () {
             self.activeTitle.addClass("hidden");
             $section.removeClass("hidden");
             $sectionTitle.removeClass("hidden");
-            if($section.outerHeight() < $(window).height() - 215 - 65) {
-                $("section").css("height", ($(window).height() - 215 - 65) + "px");
-            } else {
-                $("section").css("height", "100%");
-            }
             self.active = $section;
             self.activeTitle = $sectionTitle;
         });
