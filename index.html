@@ -1,8 +1,8 @@
 <!doctype html>
 <html class="vFull">
   <head>
-    <link rel="stylesheet" type="text/css" href="http://bayridge.hyperboleon.net/hyperboleon/normalize.css"/>
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css"/>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="css/hyperboleon.css"/>
   </head>
   <body>
@@ -16,7 +16,7 @@
       </div>
       <div>
         <span id="subtitle">the poorly-named personal website of jacob hladky</span>
-        <a id="contact" class="notLink" href="">
+        <a id="contact" class="notLink" href="#">
           <i class="fa fa-caret-right">&nbsp;</i>
           <i class="fa fa-caret-down hidden">&nbsp;</i>
           contact</a>
@@ -44,22 +44,59 @@
       <div id="content">
         <div class="hidden" id="about">
           <br>
-          Hello! Jacob Hladky is the guy in the picture. That's also his eye.
-          Jacob is a computer engineer, so in proper engineering style, the key facts in a bulleted list:
+          Hello! That's me in the picture. That's also my eye.
+          I'm a computer engineer, so in proper engineering style, the key facts in a bulleted list:
           <ul>
-            <li>Jacob's working on his B.S. in Computer Engineering at Cal Poly, San Luis Obispo. </li>
+            <li>I'm working on my B.S. in Computer Engineering at Cal Poly, San Luis Obispo. </li>
             <li>A hyperboleon is a unit of hyperbole. It's pronounced high-<em>per</em>-bowl-on,
               but really quickly. This domain was purchased in high school.</li>
-            <li>Jacob likes to code and to cycle. In his spare time he watches movies.</li>
+            <li>I like to code and to cycle. In my spare time I watch movies and draw.</li>
           </ul>
         </div>
         <div class="hidden" id="projects">
-          <p>When I'm not clawing my way out from under a mountain of homework, I'm working on personal projects, either on my own, or with the Cal Poly IEEE Student Branch.</p>
+          <p>When I'm not clawing my way out from under a mountain of homework, I'm working on personal projects, either on my own, or with the <a href="http://calpolyieee.org">Cal Poly IEEE Student Branch</a>.</p>
           <ul>
-            <li><a href="http://bayridge.hyperboleon.net/hyperboleon/prj_live/RedditFlow.html"><b>Reddit Flow</b></a> -- This was my final project for the summer course I took in javascript</li>
-            <li><a href="http://calpolyieee.org/projects/led_matrix"><b>LED Cube</b></a> -- The objective is to construct a cube composed of more than 3000 bi-color LEDs, controlled by an AVR processor and capable of taking input from various sensors. I am working on the software side of the project, writing the LED display and cube control code.</li>
-            <li><a href=""><b>Cal Poly IEEE Website</b></a> -- I am currently working on the frontend of the calpolyieee.org website.</li>
-            <li><a href=""><b>This Website</b></a> -- With the execption of <em>normalize.css</em>, all styling, content, html, etc. on this website was created and designed by me.</li>
+            <li>
+              <a href="http://bayridge.hyperboleon.net/hyperboleon/prj_live/RedditFlow.html"><h2>Reddit Flow</h2></a>
+              <p>
+                This past summer I took an online course on web development and javascript through Poly. This project is the result. The pedagogical goal of the project was to gain experience in using a REST interface and creating a SPA, but I focused a lot more on the SPA side of things. The REST interface I had to interface with was reddit's, which was surprisingly obtuse. Because of this, and because of my unwillingness to learn Oauth in addition to HTML, CSS, and js, I ended up only making a few HTTP GET calls with AJAX to retreive post listings, upvote counts, etc. 
+              </p>
+              <p>
+                However, I think the end result still turned out pretty nice. Basically, the app is a recreation of the old "BigSpy" webapp from Digg labs, but (obviously) applied to reddit posts. The app gets post listings, and sizes them according to how many upvoted they have. I also built options into the app to size posts based on alternate factors, such as # of comments, or the upvote / downvote ratio, to change the sizing ratio, and to change the color scheme (although the other option offered is so garish as to render it unusable). The js course heavily promoted the use of JQuery and Jquery UI, and those tools proved to be invaluable, not just in the final project, but in almost every web development project I've worked on since.
+              </p>
+              <p>I recall a quote from one of my professors in my systems programming class, roughly that "if you use a language enough, you will eventually come to like it.". This has certainly held true for me and javascript. I was initially highly skeptical of js; I have strong convictions about typing and js'... unique duck-typing system seemed to me to be the antithesis of good language design. But I am happy to be wrong. Being able to pass anything to anything, to not worry about casts, and to create objects and assign properties whenever I needed them is highly enjoyable and freeing. Going back to something like java after using js all winter break made me really understand for the first time what people meant when they said java was a "verbose" language.</p>
+            </li>
+            <li>
+              <a href="http://calpolyieee.org/projects/led_matrix"><h2>LED Cube</h2></a>
+              <p>
+                The LED cube &mdash; retitled LED matrix because of a different <a href="http://bayridge.hyperboleon.net/hyperboleon/img/led_cube.jpg">cube</a> currently hanging in the IEEE Lounge &mdash; is a project to construct a physical cube consisting of more than 3000 bi-color LEDs. The project was born out of a desire to make something of a surplus of cheap 8x8 LED Matrices. The project group consists of a hardware team and a software team, the hardware side tasked with designing the PCB for the matrices and the software side with writing the code to control the matrices and to interface with the various sensors that we are planning on including in the cube. On the software side, we have made tremendous progress in these past few months. A prototype PCB was delivered to us a few weeks ago and since then we have developed the code to control individual LEDs and to animate basic shapes. We expect to have the full cube working by the end of this year.
+              </p>
+              <p>
+                My specific responsibilties have been writing the code that interfaces between high level GUI functions like 'draw_line' or 'draw_circle' and the hardware of the cube itself, in effect a rather rudimentary display driver for a "screen" with ~3000 "pixels". This has been some very interesting code, to say the least. What would normally be given a dedicated harware module is instead written entirely in software, using the interrupts on the ATMega. I eventually developed a function '_single_led', that is the equivalent of what would have been an electron beam in an old CTR monitor. That is to say, the cube draws a picture by going through each LED, with the "beam", and checking whether it should be off, red, or green. The status of the LEDs is of course represented by a 3-dimensional matrix, and various helper functions have been written to interface with this matrix properly. 
+              </p>
+              <p>
+                A normal computer screen has a refresh rate of ~60Hz. In order to fully "refresh" the cube, we have to check every LED against its value in the internal matrix in order, 60 times a second. On the 16Mhz ATmega644 processor, this has resulted in a mere <b>80 clock cycles</b> between refreshes! I feel I now have a good understanding of the pain game developers went through trying to cram as much action as possible into the poor underpowered NES. This constant refreshing has also resulted in an unfortunate dimming of the LEDs on the matrix. Unavoidable, unfortunately, owing to budget and time contraints. 
+              </p>
+              <p>
+                The cube project has nonetheless been a really interesting, and fun, project. We're working as fast as we can to get it completed. It's gonna be awesome. 
+              </p>
+            </li>
+            <li>
+              <a href="http://github.com/CalPolyIEEE/ieee"><h2>Cal Poly IEEE Website</h2></a>
+              <p>
+                I am currently working on the frontend of the calpolyieee.org website. We're using jquery, of course, and also Twitter's bootstrap for the CSS, flask for the backend, and postgreSQL for the database. Certainly not your standard LAMP stack! But it's worked pretty great so far. I'm focusing on the front end, the styling and js, and the IEEE Webmaster is working on the backend, although this delineation is pretty loose, as we both know a little of everything.
+              </p>
+              <p>
+                This website was the first major group code project I've ever worked on, and I've learned a ton, most notably how to use git and its bretheren. I'm not ashamed to admit I still use dropbox and/or scp for small (< ~500 line) personal projects, but for anything larger than that, or for anything involving collaboration, git is indispensable.
+              </p>
+              <p>
+                I've had more or less free reign on the design side of the site, but we've had to collaborate extensively in developing the REST interface that is the core functionality of the site. Having to talk about my ideas in english (as opposed to in code) has been challenging but educational. We're constantly working on calpolyiee.org, currently developing a database for parts the club sells. It's a lot of work (just adding events to the site was ~1000 lines of js), but it's work I look forward to. 
+              </p>
+            </li>
+            <li>
+              <a href="#"><h2>This Website</h2></a>
+              <p>Ever since I finished my web development course, I've been working on a personal website that was uniquely mine. I've used templates before, but they didn't seem satisfying now that I understand the machinery of the web, or at least some of it. Regardless, I've been able to muddle my way through some traumatic css and create what lies before you. <em>normalize.css</em> and <em>jquery</em> I've included for use, everything else is my own. </p>
+            </li>
           </ul>
         </div>
         <div class="hidden" id="art">
@@ -93,16 +130,14 @@
                 VHDL and CPU architecture. Heavy on the VHDL, light on letting you sleep or do anything other than program for the class.</li>
               <li><b>CPE357 - Systems Programming</b><br>
                 Low level C. In this class I discovered I really loved to program. I also discovered that sometimes, 10am is too early for class.</li>
-              <li><b>CPE365 - Introduction to Database Systems</b><br></li>
+              <li><b>CPE365 - Introduction to Database Systems (Currently Enrolled)</b><br></li>
               <li><b>CPE453 - Introduction to Operating Systems</b><br>
-                Even lower level C. It turns out that mucking with the stack pointer can break printf statements sometimes.Not the worst debugging experience of my life... definitely in the top 5 though.</li>
-              <li><b>CPE464 - Introduction to Networks</b><br></li>
+                Even lower level C. Writing a thread library means using assembly to move the stack pointer about, which more or less breaks printf-style debugging... This was a <b>hard</b>, but very interesting class.</li>
+              <li><b>CPE464 - Introduction to Networks (Currently Enrolled)</b><br></li>
               <li><b>EE306/307 - Semiconductor Device Electronics</b><br>
                 Transistors: no longer powered by magic. Now it's all about the electrons... i.e. magic.</li>
-              <li><b>CS490 - Javascript and Web Applications (Summer Course)</b><br>
-                Learning a dynamic, weakly typed language was a bit of a culture shock, to say the least.
-                Segfaults are terrible, but at least you know something's wrong.</li>
-              <li><b>CPE315 & CSC 520 - Introduction/Advanced Computer Architecture</b></li>
+              <li><b>CS490 - Javascript and Web Applications (Summer Course)</b><br></li>
+              <li><b>CPE315 & CSC 520 - Introduction/Advanced Computer Architecture (Currently Enrolled)</b></li>
             </ul>
             <hr>
             Languages I know:
@@ -112,9 +147,7 @@
               <li>VHDL</li>
               <li>JS/HTML/CSS</li>
             </ul>
-            I really enjoy javascript, thanks to <em>Javascript: The Good Parts</em>, by Douglas Crockford. I spend most of my time coding in C, thanks to the sheer volume of schoolwork I have that requires it, and I do love C. But I also love first-class functions, and javascript's ridiculous typing system. Recently I found myself writing some Java where my function did not just run over 80 characters, it ran over several multiples of 80! After trauma like that, being able to declare a function like:
-<code>var foo = function(bar, baz) {}</code>
-is liberating. I'm interested in other (very-)high level languages like lisp/scheme and parts of python.
+            I'm also familiar with powershell, owing to some use over the summer, and bits and pieces of python I pick up when I need to. On the complete other end of the spectrum, I'm familiar with some of the assembly languages, specifically having used MIPS. I'd like to learn scheme or some variant, and possibly something weird and old like Pascal, hopefully an upcoming academic break will provide the opportunity. A quick plug: For what it's worth, I really enjoy javascript now, thanks to <em>Javascript: The Good Parts</em>, by Douglas Crockford.
         </div>
       </div>
       <footer class="backWidth">

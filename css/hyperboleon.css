@@ -200,3 +200,13 @@ section .title > div {
     margin-top: -20px;
     color: white;
 }
+
+#projects h3, #projects h2 {
+    margin: 0;
+}
+
+#projects p {
+    text-align: justify;
+    margin-right: 40px;
+
+}

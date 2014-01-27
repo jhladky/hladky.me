@@ -60,7 +60,7 @@ hyperboleon.setup = function () {
     }, false);
     
         
-    this.$contact.mouseover(function () {
+    this.$contact.click(function () {
         $(this).children().filter("i").toggleClass("hidden");
         self.$contactList.slideToggle();
     });
