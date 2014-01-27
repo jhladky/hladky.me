@@ -86,13 +86,13 @@ hyperboleon.setup = function () {
         $("#shadow").css("left", (width - $("#shadow").width()) / 2);
     });
 
-    /*$("body")[0].addEventListener ("overflowchanged", function() {
+    $("body")[0].addEventListener ("overflowchanged", function() {
         var width = $(window).width();
 
         $("#shadow").css("left", (width - $("#shadow").width()) / 2);
         self.$contactList.css("right", (width - 900) / 2);
         self.$sectionList.css("left", (width - 900) / 2 - self.$sectionList.width());
-    }, false); */
+    }, false);
 
     this.activeContent = this.sectionContents.about;
     this.activeTitle = this.sectionTitles.about;
