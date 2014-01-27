@@ -89,7 +89,7 @@ header #contact {
 #contactList {
     position: fixed; 
     top: 200px;
-    right: 0px;
+    right: calc((100% - 900px) / 2);
     background-color: grey;
     color: white;
     font-family: 'Carrois Gothic SC', sans-serif;
@@ -110,18 +110,36 @@ header #contact {
     text-align: center;
     font-size: 16pt;
     font-weight: bold;
-}
 
-#sectionList.normal {
     position: fixed;
-    left: 0;
+    left: calc((100% - 900px) / 2 - 120px);
     top: 200px;
     width: 120px;
 }
 
-#sectionList.mobile {
-    min-height: 120px;
-    margin-bottom: 20px;
+@media only screen and (max-width: 1200px) {
+    #sectionList {
+        position: static;
+        min-height: 120px;
+        margin-bottom: 20px;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #contactList {
+        right: 0px;
+    }
+
+    header {
+        margin-left: calc(0px - 100% / 2);
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #subtitle {
+        display: none;
+    }
 }
 
 .section {
@@ -186,6 +204,8 @@ section .title > div {
     top: -5%;
     overflow-y: hidden;
     pointer-events: none;
+    left: calc((100% - 900px) / 2);
+
     box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
     -webkit-box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
     -moz-box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
