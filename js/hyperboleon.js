@@ -29,8 +29,8 @@ hyperboleon.setup = function () {
         .attr("id", "aboutTitle")
         .css("background-image", "url('img/me.jpg')");
 
-    this.sectionCtrls.projects
-        .css("background-image", "url('img/projects.png')");
+    //this.sectionCtrls.projects
+    //    .css("background-image", "url('img/projects.png')");
 
     $.each(this.sectionCtrls, function () {
         self.$sectionList.append(this);
