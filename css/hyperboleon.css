@@ -1,7 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Carrois+Gothic+SC);
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
-
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
     -moz-box-sizing: border-box; 
@@ -16,22 +15,32 @@ body {
     height: 100%;
 }
 
-header, footer, #contactList, #sectionList, section .title {
+header,
+footer,
+#sectionList, 
+section.title {
     font-family: 'Carrois Gothic SC', sans-serif;
 }
 
-header {    
+header,
+header #contactList,
+section #sectionList {
+    font-size: 16pt;
+    font-weight: bold;
     position: fixed;
+    top: 200px;
+    margin: 0;
+}
+
+header {    
     top: 0;
-    min-height: 200px;
+    height: 200px;
     background-size: cover;
     background-position: 0px -200px;
     
     color: white;
-    font-weight: bold;
     left: 50%;
     margin-left: -450px;
-    font-size: 16pt;
     z-index: 1000;
 }
 
@@ -52,13 +61,15 @@ footer {
     background-color: grey;
     width: 100%;
     height: 50px;
+    padding: 15px;
+    text-align: center;
 }
 
 header > div:first-of-type {
     background-size: cover;
     position: relative;
     background-position: 0px -200px;
-    min-height: 175px;
+    height: 175px;
     width: 100%;
 }
 
@@ -69,7 +80,6 @@ header > div:last-of-type {
     padding-left: 10px;
     padding-right: 10px;
 }
-
 
 header #title {
     font-size: 80pt;
@@ -82,43 +92,34 @@ header #title {
 header #contact {
     position: absolute;
     right: 10px;
-    line-height: 25px;
-    
 }
 
-#contactList {
-    position: fixed; 
-    top: 200px;
+header #contactList {
     right: calc((100% - 900px) / 2);
     background-color: grey;
     color: white;
-    font-family: 'Carrois Gothic SC', sans-serif;
-    font-size: 16pt;
-    font-weight: bold;
-    width: 100px;
+    width: 125px;
     list-style-type: none;
-    margin: 0;
     direction: rtl;
     padding: 5px 10px 10px 10px;
 }
 
-#sectionList {
+section #sectionList {
     list-style-type: none;
-    margin: 0px;
     padding: 0px;
     line-height: 100px;
     text-align: center;
-    font-size: 16pt;
-    font-weight: bold;
-
-    position: fixed;
     left: calc((100% - 900px) / 2 - 120px);
-    top: 200px;
     width: 120px;
 }
 
+/*footer > div {
+    margin: 15px;
+    text-align: center;
+}*/
+
 @media only screen and (max-width: 1200px) {
-    #sectionList {
+    section #sectionList {
         position: static;
         min-height: 120px;
         margin-bottom: 20px;
@@ -127,7 +128,7 @@ header #contact {
 }
 
 @media only screen and (max-width: 900px) {
-    #contactList {
+    header #contactList {
         right: 0px;
     }
 
@@ -137,19 +138,21 @@ header #contact {
 }
 
 @media only screen and (max-width: 700px) {
-    #subtitle {
+    header #subtitle {
         display: none;
     }
 }
 
+/*margin: top right bottom left*/
 .section {
     height: 100px;
     width: 100px;
     background-size: cover;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin: 0px 10px 10px 10px;
     display: inline-block;
+    
+    -webkit-box-shadow: 2px 2px 2px 2px #dbdbdb;
+    -moz-box-shadow: 2px 2px 2px 2px #dbdbdb;
     box-shadow: 2px 2px 2px 2px #dbdbdb;
 }
 
@@ -165,7 +168,7 @@ code {
     text-align: center;
 }
 
-section #content {
+section #contents {
     margin: 0 20px;
 }
 
@@ -202,16 +205,16 @@ section .title > div {
     position: fixed;
     height: 110%;
     top: -5%;
-    overflow-y: hidden;
+    overflow: hidden;
     pointer-events: none;
     left: calc((100% - 900px) / 2);
-
-    box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
+    
     -webkit-box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
     -moz-box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
+    box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
 }
 
-#aboutTitle {
+section #aboutTitle {
     padding-top: 20px;
     background-size: cover;
     background-position: 0px -150px;
@@ -221,12 +224,15 @@ section .title > div {
     color: white;
 }
 
-#projects h3, #projects h2 {
+/*FIX THIS!!!!*/
+#contents li > a:first-of-type {
     margin: 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
-#projects p {
+#contents p {
     text-align: justify;
     margin-right: 40px;
-
 }

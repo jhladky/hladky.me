@@ -1,32 +1,32 @@
 <p>When I'm not clawing my way out from under a mountain of homework, I'm working on personal projects, either on my own, or with the <a href="http://calpolyieee.org">Cal Poly IEEE Student Branch</a>.</p>
 <ul>
   <li>
-    <a href="http://bayridge.hyperboleon.net/hyperboleon/prj_live/RedditFlow.html"><h2>Reddit Flow</h2></a>
+    <a href="http://bayridge.hyperboleon.net/hyperboleon/prj_live/RedditFlow.html">Reddit Flow</a>
     <p>
       This past summer I took an online course on web development and javascript through Poly. This project is the result. The pedagogical goal of the project was to gain experience in using a REST interface and creating a SPA, but I focused a lot more on the SPA side of things. The REST interface I had to interface with was reddit's, which was surprisingly obtuse. Because of this, and because of my unwillingness to learn Oauth in addition to HTML, CSS, and js, I ended up only making a few HTTP GET calls with AJAX to retreive post listings, upvote counts, etc. 
     </p>
     <p>
-      However, I think the end result still turned out pretty nice. Basically, the app is a recreation of the old "BigSpy" webapp from Digg labs, but (obviously) applied to reddit posts. The app gets post listings, and sizes them according to how many upvoted they have. I also built options into the app to size posts based on alternate factors, such as # of comments, or the upvote / downvote ratio, to change the sizing ratio, and to change the color scheme (although the other option offered is so garish as to render it unusable). The js course heavily promoted the use of JQuery and Jquery UI, and those tools proved to be invaluable, not just in the final project, but in almost every web development project I've worked on since.
+      However, I think the end result still turned out pretty nice. Basically, the app is a recreation of the old "BigSpy" webapp from Digg labs, but applied to reddit posts. The app gets post listings, and sizes them according to how many upvotes they have. I also built options into the app to size posts based on alternate factors, such as number of comments or the upvote / downvote ratio, to change the sizing ratio, and to change the color scheme (although the other option offered is so garish as to render it unusable). The js course heavily promoted the use of JQuery and JQuery UI, and those tools proved to be invaluable, not just in the final project, but in almost every web development project I've worked on since.
     </p>
     <p>I recall a quote from one of my professors in my systems programming class, roughly that "if you use a language enough, you will eventually come to like it.". This has certainly held true for me and javascript. I was initially highly skeptical of js; I have strong convictions about typing and js'... unique duck-typing system seemed to me to be the antithesis of good language design. But I am happy to be wrong. Being able to pass anything to anything, to not worry about casts, and to create objects and assign properties whenever I needed them is highly enjoyable and freeing. Going back to something like java after using js all winter break made me really understand for the first time what people meant when they said java was a "verbose" language.</p>
   </li>
   <li>
-    <a href="http://calpolyieee.org/projects/led_matrix"><h2>LED Cube</h2></a>
+    <a href="http://calpolyieee.org/projects/led_matrix">LED Cube</a>
     <p>
       The LED cube &mdash; retitled LED matrix because of a different <a href="http://bayridge.hyperboleon.net/hyperboleon/img/led_cube.jpg">cube</a> currently hanging in the IEEE Lounge &mdash; is a project to construct a physical cube consisting of more than 3000 bi-color LEDs. The project was born out of a desire to make something of a surplus of cheap 8x8 LED Matrices. The project group consists of a hardware team and a software team, the hardware side tasked with designing the PCB for the matrices and the software side with writing the code to control the matrices and to interface with the various sensors that we are planning on including in the cube. On the software side, we have made tremendous progress in these past few months. A prototype PCB was delivered to us a few weeks ago and since then we have developed the code to control individual LEDs and to animate basic shapes. We expect to have the full cube working by the end of this year.
     </p>
     <p>
-      My specific responsibilties have been writing the code that interfaces between high level GUI functions like 'draw_line' or 'draw_circle' and the hardware of the cube itself, in effect a rather rudimentary display driver for a "screen" with ~3000 "pixels". This has been some very interesting code, to say the least. What would normally be given a dedicated harware module is instead written entirely in software, using the interrupts on the ATMega. I eventually developed a function '_single_led', that is the equivalent of what would have been an electron beam in an old CTR monitor. That is to say, the cube draws a picture by going through each LED, with the "beam", and checking whether it should be off, red, or green. The status of the LEDs is of course represented by a 3-dimensional matrix, and various helper functions have been written to interface with this matrix properly. 
+      My specific responsibilties have been writing the code that interfaces between high level GUI functions like 'draw_line' or 'draw_circle' and the hardware of the cube itself, in effect a rather rudimentary display driver for a "screen" with ~3000 "pixels". This has been some very interesting code, to say the least. What would normally be given a dedicated harware module is instead written entirely in software, using the interrupts on the ATMega. I eventually developed a function '_single_led', that is the equivalent of what would have been an electron beam in an old CTR monitor. That is to say, the cube draws a picture by going through each LED, with the "beam", and checking whether it should be off, red, or green. The status of the LEDs is represented by a 3-dimensional matrix, with various helper functions to interface with this matrix properly. 
     </p>
     <p>
-      A normal computer screen has a refresh rate of ~60Hz. In order to fully "refresh" the cube, we have to check every LED against its value in the internal matrix in order, 60 times a second. On the 16Mhz ATmega644 processor, this has resulted in a mere <b>80 clock cycles</b> between refreshes! I feel I now have a good understanding of the pain game developers went through trying to cram as much action as possible into the poor underpowered NES. This constant refreshing has also resulted in an unfortunate dimming of the LEDs on the matrix. Unavoidable, unfortunately, owing to budget and time contraints. 
+      A normal computer screen has a refresh rate of ~60Hz. In order to fully "refresh" the cube, we have to check every LED against its value in the internal matrix in order, 60 times a second. On the (already overclocked) 16Mhz ATmega644 processor, this has resulted in a mere <b>80 clock cycles</b> between refreshes! I feel I now have a good understanding of the pain game developers went through trying to cram as much action as possible into the poor underpowered NES. This constant refreshing has also resulted in an unfortunate dimming of the LEDs on the matrix. Unavoidable, unfortunately, owing to budget and time contraints. 
     </p>
     <p>
       The cube project has nonetheless been a really interesting, and fun, project. We're working as fast as we can to get it completed. It's gonna be awesome. 
     </p>
   </li>
   <li>
-    <a href="http://github.com/CalPolyIEEE/ieee"><h2>Cal Poly IEEE Website</h2></a>
+    <a href="http://github.com/CalPolyIEEE/ieee">Cal Poly IEEE Website</a>
     <p>
       I am currently working on the frontend of the calpolyieee.org website. We're using jquery, of course, and also Twitter's bootstrap for the CSS, flask for the backend, and postgreSQL for the database. Certainly not your standard LAMP stack! But it's worked pretty great so far. I'm focusing on the front end, the styling and js, and the IEEE Webmaster is working on the backend, although this delineation is pretty loose, as we both know a little of everything.
     </p>
@@ -38,7 +38,7 @@
     </p>
   </li>
   <li>
-    <a href="#"><h2>This Website</h2></a>
+    <a href="#">This Website</a>
     <p>Ever since I finished my web development course, I've been working on a personal website that was uniquely mine. I've used templates before, but they didn't seem satisfying now that I understand the machinery of the web, or at least some of it. Regardless, I've been able to muddle my way through some traumatic css and create what lies before you. <em>normalize.css</em> and <em>jquery</em> I've included for use, everything else is my own. </p>
   </li>
 </ul>

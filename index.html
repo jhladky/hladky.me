@@ -1,13 +1,13 @@
 <!doctype html>
 <html class="vFull">
   <head>
-    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css"/>
-    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>
-    <link rel="stylesheet" type="text/css" href="css/hyperboleon.css"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/hyperboleon.css"/>
   </head>
   <body>
     <div id="shadow" class="hCenter"></div>
-    
+
     <header class="backWidth hFull">
       <div style="background-image: url('img/header-back.jpg')">
         <div id="title">
@@ -17,32 +17,30 @@
       <div>
         <span id="subtitle">the poorly-named personal website of jacob hladky</span>
         <a id="contact" class="notLink" href="#">
-          <i class="fa fa-caret-right">&nbsp;</i>
-          <i class="fa fa-caret-down hidden">&nbsp;</i>
-          contact</a>
+          <i class="fa fa-caret-right">&nbsp;</i> <!-- fix caret position -->
+          contact
+        </a>
       </div>
-    </header>
-    
-    <section class="hCenter backWidth">
       <ul id="contactList" class="hidden">
         <li><a class="notLink" href="mailto:jacob.hladky@gmail.com">email</a></li>
         <li><a class="notLink" href="http://github.com/jhladky">github</a></li>
         <li><a class="notLink" href="resume.pdf">r&eacute;sum&eacute;</a></li>
       </ul>
+    </header>
+    
+    <section class="hCenter backWidth">  
       <div id="sectionList"></div>
       <div class="title" id="titles"></div>
-      <div id="content"></div>
+      <div id="contents"></div>
       
       <footer class="backWidth hCenter">
-        <div class="hFull" style="margin: 15px; text-align: center;">&copy; jacob hladky 2014</div>
+        &copy; jacob hladky 2014
       </footer>
       
     </section>
     
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="js/hyperboleon.js"></script>
-    <script>
-      $(function ()  { hyperboleon.setup(); });
-    </script>
+    <script> $(function () { hyperboleon.setup(); }); </script>
   </body>
 </html>

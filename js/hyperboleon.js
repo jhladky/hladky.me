@@ -1,9 +1,7 @@
 var hyperboleon = {
-    $header: $("header"),
-    $footer: $("footer"),
     $title: $("#title"),
-    $titles: $("#titles"), //rename me
-    $contents: $("#content"), //rename me
+    $titles: $("#titles"),
+    $contents: $("#contents"),
     $contact: $("#contact"),
     $contactList: $("#contactList"),
     $sectionList: $("#sectionList"),
@@ -28,16 +26,13 @@ hyperboleon.setup = function () {
     this.sectionTitles.about
         .attr("id", "aboutTitle")
         .css("background-image", "url('img/me.jpg')");
-
-    //this.sectionCtrls.projects
-    //    .css("background-image", "url('img/projects.png')");
-
+    
     $.each(this.sectionCtrls, function () {
         self.$sectionList.append(this);
     });
 
     this.$contact.click(function () {
-        $(this).children().toggleClass("hidden");
+        $(this).children().toggleClass("fa-caret-down fa-caret-right");
         self.$contactList.slideToggle();
     });
 
