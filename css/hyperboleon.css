@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Carrois+Gothic+SC);
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
 
 /* apply a natural box layout model to all elements */
@@ -13,13 +12,6 @@ body {
     font-family: 'Droid Sans', sans-serif;
     padding-top: 200px;
     height: 100%;
-}
-
-header,
-footer,
-#sectionList, 
-section.title {
-    font-family: 'Carrois Gothic SC', sans-serif;
 }
 
 header,
@@ -46,7 +38,7 @@ header {
 
 section {
     padding-top: 20px;
-    padding-bottom: 70px;
+    padding-bottom: 40px;
     background-color: white;
     font-size: 13pt;
     position: relative;
@@ -60,8 +52,8 @@ footer {
     left: 0; 
     background-color: grey;
     width: 100%;
-    height: 50px;
-    padding: 15px;
+    height: 30px;
+    padding: 6px;
     text-align: center;
 }
 
@@ -84,14 +76,19 @@ header > div:last-of-type {
 header #title {
     font-size: 80pt;
     position: absolute;
-    left: 0;
-    bottom: 0;
-    line-height: .65;
+    left: -8.5px;
+    bottom: -24px;
 }
 
 header #contact {
     position: absolute;
     right: 10px;
+    bottom: 2px;
+}
+
+header #contact i {
+    position: relative;
+    bottom: -2px;
 }
 
 header #contactList {
@@ -150,10 +147,6 @@ section #sectionList {
     background-size: cover;
     margin: 0px 10px 10px 10px;
     display: inline-block;
-    
-    -webkit-box-shadow: 2px 2px 2px 2px #dbdbdb;
-    -moz-box-shadow: 2px 2px 2px 2px #dbdbdb;
-    box-shadow: 2px 2px 2px 2px #dbdbdb;
 }
 
 a.notLink {
@@ -198,20 +191,6 @@ section .title > div {
 
 .hidden {
     display: none;
-}
-
-#shadow {
-    width: 900px;
-    position: fixed;
-    height: 110%;
-    top: -5%;
-    overflow: hidden;
-    pointer-events: none;
-    left: calc((100% - 900px) / 2);
-    
-    -webkit-box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
-    -moz-box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
-    box-shadow: 8px 0px 5px -5px #d6d6d6, -8px 0px 5px -5px #d6d6d6;
 }
 
 section #aboutTitle {
