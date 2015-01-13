@@ -1,4 +1,4 @@
-var hyperboleon = {
+var hladky = {
     $title: $("#title"),
     $titles: $("#titles"),
     $contents: $("#contents"),
@@ -12,7 +12,7 @@ var hyperboleon = {
     sectionContents: {}
 };
 
-hyperboleon.setup = function () {
+hladky.setup = function () {
     var self = this;
 
     this.sections.forEach(function(section) {
