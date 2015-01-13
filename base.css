@@ -1,0 +1,47 @@
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+body {
+    background-color: #fafafa;
+    padding: 20px 20px 50px 140px;
+}
+
+nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+nav > a {
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 16pt;
+    text-decoration: none;
+    background-size: cover;
+}
+
+/*css for individual sections*/
+#home .img {
+    height: 400px;
+    width: 600px;
+    background-size: cover;
+    border-radius: 5px;
+}
